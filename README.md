@@ -33,7 +33,7 @@
 | brainstorming + writing-plans 输出一大段计划 | 疯狂冲击上下文，导致 Claude Code 回退到默认工具调用，忘记使用你指定的 skills |
 | 长任务执行到一半会话中断 | 再次打开时完全不记得做到了哪里，一切从头开始 |
 
-**Plan-For-All** 充分汲取 planning-with-files 项目的思想——即 Manus 思想——把计划写入硬盘，彻底杜绝上下文压缩导致的计划错乱。
+**Plan-For-All** 汲取 planning-with-files（Manus 思想）的核心——将计划写入磁盘，彻底杜绝上下文压缩导致的计划丢失。借鉴 superpowers 的需求设计与计划拆解理念，并将其真正落实为小文件形式（step_subplan），避免大段计划内容涌入上下文。
 
 ---
 

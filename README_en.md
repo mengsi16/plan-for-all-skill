@@ -33,7 +33,7 @@ Have you experienced these frustrating moments?
 | brainstorming + writing-plans output massive plans | Overwhelming context causes Claude Code to fall back to default tool calls, forgetting your specified skills |
 | Long task interrupted mid-session | When you return, you have no idea where you left off — everything from scratch |
 
-**Plan-For-All** draws heavily from the planning-with-files project's philosophy — the Manus philosophy — writing plans to disk to completely prevent plan chaos caused by context compression.
+**Plan-For-All** draws from the planning-with-files (Manus philosophy) — writing plans to disk to prevent plan loss from context compression. It also draws from superpowers' requirements design and step-decomposition concepts, actually implementing them as small files (step_subplan) to prevent massive content from flooding the context.
 
 ---
 
