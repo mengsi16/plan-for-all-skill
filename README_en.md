@@ -209,7 +209,7 @@ Download and extract the project, place it in the ~/.claude/skills directory.
 
 Invoke with:
 ```
-/plan-for-all
+/plan-for-all prompt
 ```
 
 ---
