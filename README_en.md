@@ -45,10 +45,10 @@ Have you experienced these frustrating moments?
 Plan-For-All breaks large plans into small chunks, uses `task_plan.md` as the master view, and automatically loads small plans as each phase progresses. This keeps **the plan always up-to-date** and **context always clean**.
 
 ```
-┌────────────────────────────────────────────────────────────┐
-│  Traditional: Everything in context → Compressed/Lost      │
-│  Plan-For-All: Plans to disk → Load on demand → Clean     │
-└────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│  Traditional: Everything in context → Compressed/Lost                               │
+│  Plan-For-All: Split detailed-plan to subplans to disk → Load on demand → Clean     │
+└─────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -57,11 +57,11 @@ Plan-For-All breaks large plans into small chunks, uses `task_plan.md` as the ma
 
 ```
 Phase 1: BRAINSTORMING          Phase 2: WRITING PLANS         Phase 3: EXECUTE
-┌─────────────────────┐       ┌─────────────────────┐       ┌─────────────────────┐
-│  Explore → Approve  │ ──► │  detail_plan →      │ ──► │  TDD small steps    │
-│  design.md output   │       │  step_subplan →     │       │  Hook auto-reads    │
-│                      │       │  task_plan.md        │       │  auto-updates state  │
-└─────────────────────┘       └─────────────────────┘       └─────────────────────┘
+┌─────────────────────┐       ┌─────────────────────┐       ┌────────────────────────┐
+│  Explore → Approve  │ ──►   │  detail_plan →      │ ──►   │  TDD small steps       │
+│  design.md output   │       │  step_subplan →     │       │  Hook auto-reads       │
+│                     │       │  task_plan.md       │       │  auto-updates state    │
+└─────────────────────┘       └─────────────────────┘       └────────────────────────┘
 ```
 
 ---
