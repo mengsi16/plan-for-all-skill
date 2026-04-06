@@ -1,1 +1,0 @@
-{"version": "2.0.0","name": "plan-for-all-plugin","description": "A file-backed workflow plugin for Claude Code that plans and executes persistent tasks across design, planning, and execution.","agents": ["agents/plan-for-all.md"]}
