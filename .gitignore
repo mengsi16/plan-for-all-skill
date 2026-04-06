@@ -1,5 +1,5 @@
 md/
-test/
+tests/
 
 # Python
 __pycache__/
