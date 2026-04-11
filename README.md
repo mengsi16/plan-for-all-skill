@@ -302,16 +302,14 @@ claude plugin marketplace add mengsi16/plan-for-all
 然后安装：
 
 ```bash
-/plugin install plan-for-all@plan-for-all-marketplace
+claude plugin install plan-for-all@plan-for-all-marketplace
 ```
 
 完整远程安装流程：
 
 ```bash
 claude plugin marketplace add mengsi16/plan-for-all
-/plugin install plan-for-all@plan-for-all-marketplace
-/reload-plugins
-/agents
+claude plugin install plan-for-all@plan-for-all-marketplace
 ```
 
 ---
