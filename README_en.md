@@ -302,16 +302,14 @@ claude plugin marketplace add mengsi16/plan-for-all
 Then install the plugin with:
 
 ```bash
-/plugin install plan-for-all@plan-for-all-marketplace
+claude plugin install plan-for-all@plan-for-all-marketplace
 ```
 
 Full remote installation flow:
 
 ```bash
 claude plugin marketplace add mengsi16/plan-for-all
-/plugin install plan-for-all@plan-for-all-marketplace
-/reload-plugins
-/agents
+claude plugin install plan-for-all@plan-for-all-marketplace
 ```
 
 ---
