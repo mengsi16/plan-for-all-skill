@@ -276,6 +276,7 @@ claude --plugin-dir .
 在 Claude Code 中添加当前仓库作为 marketplace：
 
 ```bash
+claude
 /plugin marketplace add ./plan-for-all
 /plugin install plan-for-all@plan-for-all-marketplace
 ```
