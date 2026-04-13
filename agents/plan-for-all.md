@@ -200,6 +200,9 @@ Only invoked when the converged design includes a user-visible interface whose s
 
 When invoked, `ui-ux-pro-max` runs **before** `writing-plans` so its output feeds into the implementation plan.
 
+UI refinement must persist:
+- `docs/plan-for-all/specs/YYYY-MM-DD-<topic>-ui-spec.md`
+
 #### writing-plans
 
 Use `skills/writing-plans/SKILL.md`.
@@ -211,6 +214,8 @@ Required output:
 - step subplans split as full phase copies for execution
 - `task_plan.md` initialized from the plan
 - `findings.md` and `progress.md` initialized with correct responsibilities
+
+When UI work exists, `writing-plans` must require a valid `docs/plan-for-all/specs/YYYY-MM-DD-<topic>-ui-spec.md` before creating the detail plan.
 
 `writing-plans` absorbs UI-stage output when `ui-ux-pro-max` was invoked.
 

@@ -99,7 +99,7 @@ flowchart LR
 | `writing-plans` is implementation handoff | it serves implementers and includes UI constraints from the UI stage when present |
 | Smoke check before implementation | non-trivial work starts from a baseline proof or failure reproduction |
 | TDD must not be postponed | no more “implement first, remind later” workflow |
-| `step_subplan` is an execution view | it extracts current objective, verification, and exit criteria |
+| `step_subplan` is an execution view | it preserves a verbatim copy of the active phase from the detail plan for execution |
 | Hook fallback guardrails stay | hooks continue to handle session recovery, context replay, and TDD/verification reminders without replacing the written workflow contract |
 | New terms default to mandatory verification | new terms, semantically drifted terms, and recent paradigms must be checked first; if they would affect the next question, approach comparison, or design assumption, verify before asking, with official sources preferred and recent high-quality sources used when no official source exists |
 | Audit stays active across phases | brainstorming, planning, decomposition, execution, and completion must all register new risky terms and carry blockers forward |
@@ -130,6 +130,9 @@ It is not for:
 - owning the final design doc
 
 After it runs, its outputs are merged into planning inputs before `writing-plans` begins.
+
+When UI refinement runs, it must persist:
+- `docs/plan-for-all/specs/YYYY-MM-DD-<topic>-ui-spec.md`
 
 ---
 
@@ -218,6 +221,7 @@ If interface refinement is needed later, `brainstorming` may call `ui-ux-pro-max
 | File | Purpose |
 |------|---------|
 | `docs/plan-for-all/task_plan.md` | master view and only status truth source |
+| `docs/plan-for-all/specs/YYYY-MM-DD-<topic>-ui-spec.md` | UI spec contract for structure, component states, visual direction, and accessibility constraints |
 | `docs/plan-for-all/plans/step_subplans/step_subplan_phaseN.md` | execution view for the current phase |
 | `docs/plan-for-all/plans/YYYY-MM-DD-<topic>-detail.md` | full implementation plan |
 | `docs/plan-for-all/findings.md` | decisions, assumptions, risks, audit output |
@@ -236,7 +240,7 @@ Compared with the legacy version, the current version explicitly fixes several s
 - `ui-ux-pro-max` is upgraded to a peer stage orchestrated by `brainstorming` (UI first when UI is required)
 - `writing-plans` is back to being the implementation handoff layer
 - it no longer lets `progress.md` or `findings.md` own status
-- it no longer treats `step_subplan` as a raw copy of the detail plan
+- it explicitly requires `step_subplan` to be a verbatim copy of the selected detail-plan phase
 - it no longer defaults to stuffing speculative implementation code into the plan
 
 See:

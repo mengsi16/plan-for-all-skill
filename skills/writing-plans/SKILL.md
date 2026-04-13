@@ -14,6 +14,7 @@ A plan is not a code dump. Its job is to define behavior, boundaries, checkpoint
 Before writing the plan, confirm you have:
 - an approved design doc in `docs/plan-for-all/specs/`
 - UI refinement outputs when the design includes UI work
+- `docs/plan-for-all/specs/YYYY-MM-DD-<topic>-ui-spec.md` when UI work exists
 - explicit goals and non-goals
 - acceptance criteria
 - known risks or open questions
@@ -21,6 +22,22 @@ Before writing the plan, confirm you have:
 If these are missing, return to brainstorming.
 
 If UI work exists but refinement outputs are missing, run `skills/ui-ux-pro-max/SKILL.md` first under brainstorming supervision.
+
+### UI Refinement Hard Gate
+
+When the approved design includes UI work, do not start detail planning until `docs/plan-for-all/specs/YYYY-MM-DD-<topic>-ui-spec.md` exists and is reviewable.
+
+Prefer generating this file from `templates/ui_refinement_spec.md`.
+
+The UI spec must include at least:
+- information architecture and page/screen structure
+- key user flows
+- component inventory and interaction-state matrix
+- visual direction and design tokens
+- responsive/breakpoint strategy
+- accessibility and motion constraints
+
+If this file is missing or incomplete, return to brainstorming and complete UI refinement first.
 
 ## Required Outputs
 
@@ -30,6 +47,9 @@ Planning must produce:
 - `docs/plan-for-all/task_plan.md`
 - `docs/plan-for-all/findings.md`
 - `docs/plan-for-all/progress.md`
+
+When UI work exists, planning must also reference:
+- `docs/plan-for-all/specs/YYYY-MM-DD-<topic>-ui-spec.md`
 
 ## Planning Principles
 
@@ -124,7 +144,8 @@ Use this structure:
 - Goals:
 - Non-goals:
 - Acceptance criteria:
-- UI refinement constraints (if applicable):
+- UI refinement constraints (required when UI work exists):
+- UI spec path (required when UI work exists):
 - Open questions / risks:
 - Verified terminology / external assumptions:
 
@@ -258,6 +279,7 @@ Before handing off, confirm:
 - every phase has verification, not just implementation intent
 - bugfix plans include reproduction and failing regression tests
 - refactor plans include behavior-preservation checks
+- UI work includes a committed UI spec path and concrete UI constraints
 - all mandatory audit items were verified or surfaced as blockers
 - high-risk terminology has explicit current meaning in `findings.md`
 - `task_plan.md` can be used alone to determine current status and blockers

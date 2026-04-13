@@ -56,8 +56,9 @@ You MUST complete these in order:
 6. **Decide whether UI refinement stage is needed** — if yes, route to `ui-ux-pro-max` first
 7. **Write design doc** — save to `docs/plan-for-all/specs/YYYY-MM-DD-<topic>-design.md`
 8. **User reviews written spec** — user can request changes before downstream stages start
-9. **Run UI refinement stage when required** — invoke `skills/ui-ux-pro-max/SKILL.md` and merge outputs into planning inputs
-10. **Transition to implementation planning** — invoke `skills/writing-plans/SKILL.md` after required UI refinement is complete
+9. **Run UI refinement stage when required** — invoke `skills/ui-ux-pro-max/SKILL.md` and write `docs/plan-for-all/specs/YYYY-MM-DD-<topic>-ui-spec.md`
+10. **User reviews written UI spec** — user can request changes before downstream planning
+11. **Transition to implementation planning** — invoke `skills/writing-plans/SKILL.md` after required UI refinement is complete
 
 ## Process Flow
 
@@ -72,9 +73,10 @@ digraph brainstorming {
     "User approves design?" [shape=diamond];
     "Need downstream UI refinement?" [shape=diamond];
     "Run ui-ux-pro-max peer stage" [shape=box];
-    "Merge UI outputs into design inputs" [shape=box];
     "Write design doc" [shape=box];
     "User reviews spec?" [shape=diamond];
+    "Write UI spec doc" [shape=box];
+    "User reviews UI spec?" [shape=diamond];
     "Invoke writing-plans skill" [shape=doublecircle];
 
     "Explore project context" -> "Ask clarifying questions";
@@ -85,14 +87,16 @@ digraph brainstorming {
     "Propose 2-3 approaches" -> "Present design sections";
     "Present design sections" -> "User approves design?";
     "User approves design?" -> "Ask clarifying questions" [label="no, revise"];
-    "User approves design?" -> "Need downstream UI refinement?" [label="yes"];
-    "Need downstream UI refinement?" -> "Run ui-ux-pro-max peer stage" [label="yes"];
-    "Need downstream UI refinement?" -> "Write design doc" [label="no"];
-    "Run ui-ux-pro-max peer stage" -> "Merge UI outputs into design inputs";
-    "Merge UI outputs into design inputs" -> "Write design doc";
+    "User approves design?" -> "Write design doc" [label="yes"];
     "Write design doc" -> "User reviews spec?";
     "User reviews spec?" -> "Ask clarifying questions" [label="changes requested"];
-    "User reviews spec?" -> "Invoke writing-plans skill" [label="approved"];
+    "User reviews spec?" -> "Need downstream UI refinement?" [label="approved"];
+    "Need downstream UI refinement?" -> "Run ui-ux-pro-max peer stage" [label="yes"];
+    "Need downstream UI refinement?" -> "Invoke writing-plans skill" [label="no"];
+    "Run ui-ux-pro-max peer stage" -> "Write UI spec doc";
+    "Write UI spec doc" -> "User reviews UI spec?";
+    "User reviews UI spec?" -> "Run ui-ux-pro-max peer stage" [label="changes requested"];
+    "User reviews UI spec?" -> "Invoke writing-plans skill" [label="approved"];
 }
 ```
 
@@ -188,7 +192,7 @@ Use when the converged design includes a user-visible interface whose structure,
 
 This skill does NOT own product requirement convergence. It is a peer downstream stage coordinated by `brainstorming` and must run before `writing-plans` when UI requirements exist.
 
-Its outputs must be merged into planning inputs before moving to `writing-plans`.
+When used, it must write `docs/plan-for-all/specs/YYYY-MM-DD-<topic>-ui-spec.md` (prefer `templates/ui_refinement_spec.md`) so `writing-plans` can consume stable UI constraints instead of chat-only notes.
 
 #### `writing-plans`
 Use only after the written design has been accepted, and after UI refinement if UI refinement is required.
@@ -231,7 +235,7 @@ Do not do these:
 ## Handoff
 
 After the user accepts the written design:
-- if UI refinement is required, invoke `skills/ui-ux-pro-max/SKILL.md` first and merge outputs
+- if UI refinement is required, invoke `skills/ui-ux-pro-max/SKILL.md` first and write `docs/plan-for-all/specs/YYYY-MM-DD-<topic>-ui-spec.md`
 - then invoke `skills/writing-plans/SKILL.md`
 
 If audit-sensitive terms were found, ensure the design doc names them so planning treats them as mandatory audit inputs instead of hidden assumptions.
