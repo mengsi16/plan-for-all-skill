@@ -263,14 +263,7 @@ claude --plugin-dir ./plan-for-all
 Or from the repository root:
 
 ```bash
-claude --plugin-dir .
-```
-
-After loading, run:
-
-```bash
-/reload-plugins
-/agents
+claude --plugin-dir . --agent plan-for-all:plan-for-all
 ```
 
 `plan-for-all` is set as default agent via `settings.json`.
@@ -280,16 +273,10 @@ After loading, run:
 Add this repository as a marketplace inside Claude Code:
 
 ```bash
-/plugin marketplace add ./plan-for-all
-/plugin install plan-for-all@plan-for-all-marketplace
+claude plugin marketplace add ./plan-for-all
+claude plugin install plan-for-all@plan-for-all-marketplace
 ```
 
-After installation, run:
-
-```bash
-/reload-plugins
-/agents
-```
 
 ### Option 3: remote marketplace install
 
@@ -314,6 +301,7 @@ Full remote installation flow:
 ```bash
 claude plugin marketplace add mengsi16/plan-for-all
 claude plugin install plan-for-all@plan-for-all-marketplace
+claude --agent plan-for-all:plan-for-all --dangerously-skip-permissions
 ```
 
 ---
