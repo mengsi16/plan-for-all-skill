@@ -275,6 +275,7 @@ claude --plugin-dir . --agent plan-for-all:plan-for-all
 ```bash
 claude plugin marketplace add ./plan-for-all
 claude plugin install plan-for-all@plan-for-all-marketplace
+claude --agent plan-for-all:plan-for-all --dangerously-skip-permissions
 ```
 
 ### 方式三：远程 marketplace 安装
