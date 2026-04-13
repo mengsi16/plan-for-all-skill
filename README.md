@@ -263,14 +263,7 @@ claude --plugin-dir ./plan-for-all
 或者在仓库根目录执行：
 
 ```bash
-claude --plugin-dir .
-```
-
-加载后建议执行：
-
-```bash
-/reload-plugins
-/agents
+claude --plugin-dir . --agent plan-for-all:plan-for-all
 ```
 
 默认会激活 `plan-for-all` agent（由 `settings.json` 指定）。
@@ -280,16 +273,8 @@ claude --plugin-dir .
 在 Claude Code 中添加当前仓库作为 marketplace：
 
 ```bash
-claude
-/plugin marketplace add ./plan-for-all
-/plugin install plan-for-all@plan-for-all-marketplace
-```
-
-安装后建议执行：
-
-```bash
-/reload-plugins
-/agents
+claude plugin marketplace add ./plan-for-all
+claude plugin install plan-for-all@plan-for-all-marketplace
 ```
 
 ### 方式三：远程 marketplace 安装
@@ -315,6 +300,7 @@ claude plugin install plan-for-all@plan-for-all-marketplace
 ```bash
 claude plugin marketplace add mengsi16/plan-for-all
 claude plugin install plan-for-all@plan-for-all-marketplace
+claude --agent plan-for-all:plan-for-all --dangerously-skip-permissions
 ```
 
 ---
